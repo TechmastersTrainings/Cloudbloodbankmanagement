@@ -1,0 +1,31 @@
+/* ============================ Admin dashboard ============================ */
+.admin-alert { margin-bottom: var(--space-5); }
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+@media (max-width: 1080px) {
+  .admin-grid { grid-template-columns: 1fr; }
+}
+
+.avail-list { display: grid; gap: var(--space-3); }
+.avail-row { display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: var(--space-3); }
+.avail-bar {
+  height: 10px;
+  background: var(--sand-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.avail-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--brand-400), var(--brand-600));
+  transition: width var(--dur-slow) var(--ease-out);
+}
+.avail-num { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.15; min-width: 4rem; }
+.avail-num strong { font-family: var(--font-display); color: var(--ink-900); }
+.avail-num span { font-size: var(--text-2xs); color: var(--ink-500); }

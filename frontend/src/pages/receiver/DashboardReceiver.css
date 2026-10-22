@@ -1,0 +1,63 @@
+/* ============================ Receiver dashboard ============================ */
+.receiver-alert { margin-bottom: var(--space-5); }
+
+.receiver-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+/* Segmented control */
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  gap: 3px;
+  background: var(--sand-200);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.segmented-item {
+  padding: 0.4rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-600);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.segmented-item:hover { color: var(--ink-900); }
+.segmented-item.active { background: var(--surface); color: var(--brand-700); box-shadow: var(--shadow-sm); }
+.segmented-item.danger.active { color: var(--blood-600); }
+
+/* Hospital picker */
+.hospital-picker { display: grid; gap: var(--space-2); }
+.hospital-picker ul { display: grid; gap: var(--space-2); max-height: 300px; overflow-y: auto; padding-right: 2px; }
+.hospital-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.hospital-option:hover { border-color: var(--brand-300); background: var(--brand-50); }
+.hospital-option.selected { border-color: var(--brand-500); background: var(--brand-50); box-shadow: 0 0 0 3px var(--brand-100); }
+.hospital-option > div:first-child { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hospital-option strong { font-size: var(--text-md); color: var(--ink-900); }
+.hospital-option .muted { font-size: var(--text-xs); }
+.hospital-option-side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex: none; }
+.hospital-option-side .muted { display: inline-flex; align-items: center; gap: 4px; }
+.hospital-option-side svg { width: 13px; height: 13px; }
+
+@media (max-width: 980px) {
+  .receiver-layout { grid-template-columns: 1fr; }
+}

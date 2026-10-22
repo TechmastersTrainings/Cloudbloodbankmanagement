@@ -1,0 +1,70 @@
+/* ============================ Eligibility ============================ */
+.elig-card { display: grid; gap: var(--space-6); }
+
+.elig-field { border: none; display: grid; gap: 0.5rem; }
+.elig-field legend { padding: 0; }
+
+.elig-card .input-affix .input { padding-right: 4.2rem; }
+
+.input-affix-text {
+  position: absolute;
+  right: 0.85rem;
+  font-size: var(--text-sm);
+  color: var(--ink-400);
+  pointer-events: none;
+}
+
+.seg {
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  background: var(--sand-200);
+  border-radius: var(--radius-md);
+  width: fit-content;
+}
+.seg-opt {
+  position: relative;
+  padding: 0.5rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-md);
+  font-weight: var(--fw-semibold);
+  color: var(--ink-600);
+  cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.seg-opt input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.seg-opt:hover { color: var(--ink-900); }
+.seg-opt.selected { background: var(--surface); color: var(--brand-700); box-shadow: var(--shadow-xs); }
+.seg-opt:focus-within { box-shadow: var(--ring-brand); }
+
+.elig-result {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-5);
+  margin-top: var(--space-6);
+}
+.elig-result.ok { border-color: var(--success-100); background: var(--success-50); }
+.elig-result.no { border-color: var(--warn-100); background: var(--warn-50); }
+.elig-result h3 { font-size: var(--text-xl); margin-bottom: 0.25rem; }
+.elig-result p { margin: 0; }
+.elig-result-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  flex: none;
+}
+.elig-result-icon svg { width: 24px; height: 24px; }
+.elig-result-icon.ok { background: var(--success-100); color: var(--success-700); }
+.elig-result-icon.no { background: var(--warn-100); color: var(--warn-700); }
+
+.elig-note { margin-top: var(--space-6); }

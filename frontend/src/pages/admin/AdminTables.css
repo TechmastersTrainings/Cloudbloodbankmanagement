@@ -1,0 +1,9 @@
+/* ============================ Admin management tables ============================ */
+.admin-notice { margin-bottom: var(--space-5); }
+
+/* Table wrap already provides border + radius; keep toolbars tidy on small screens */
+@media (max-width: 720px) {
+  .table-toolbar { align-items: stretch; }
+  .table-toolbar .search-affix { min-width: 0 !important; width: 100%; }
+  .table-toolbar .tabs { overflow-x: auto; }
+}
